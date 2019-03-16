@@ -8,9 +8,25 @@
 
 .social-wrapper {
   display: flex;
+  justify-content: space-between;
+  width: 20%;
 }
 
 .social {
-  width: 100px;
-  height: 40px;
+  width: 20%;
+  height: 80px;
+  border: 1px solid blue;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fa-instagram {
+  border-right: 1px solid black;
+  padding-right: 20px;
+}
+.instagram-title {
+  font-family: "Satisfy", cursive;
+  justify-content: flex-start;
+  margin: 0;
+  width: 20%;
+  padding-left: 10px;
 }

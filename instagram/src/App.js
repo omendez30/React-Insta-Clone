@@ -15,14 +15,26 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData
+      posts: [],
+      filteredPost: []
     };
   }
+  componentDidMount() {
+    console.log("CDM");
+    this.setState({ posts: dummyData });
+  }
+  searchPostsHandler = event => {
+    const posts = this.state.posts.filter(post => {
+      if (post.username.includes(event.target.value)) {
+        return post;
+      }
+    });
+    this.setState({ filteredPost: posts });
+  };
   render() {
-    console.log(dummyData);
     return (
       <div className="app">
-        <SearchBar />
+        <SearchBar searchPosts={this.searchPostsHandler} />
         <PostContainer posts={this.state.posts} />
       </div>
     );
