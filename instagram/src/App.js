@@ -23,19 +23,26 @@ class App extends Component {
     console.log("CDM");
     this.setState({ posts: dummyData });
   }
+
   searchPostsHandler = event => {
     const posts = this.state.posts.filter(post => {
       if (post.username.includes(event.target.value)) {
         return post;
       }
     });
-    this.setState({ filteredPost: posts });
+    this.setState({ filteredPosts: posts });
   };
   render() {
     return (
       <div className="app">
         <SearchBar searchPosts={this.searchPostsHandler} />
-        <PostContainer posts={this.state.posts} />
+        <PostContainer
+          posts={
+            this.state.filteredPost.length > 0
+              ? this.state.filteredPosts
+              : this.state.posts
+          }
+        />
       </div>
     );
   }

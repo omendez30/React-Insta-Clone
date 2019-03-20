@@ -10,14 +10,22 @@
   display: flex;
   justify-content: space-between;
   width: 20%;
+  align-items: flex-end;
 }
-
+.search-bar-wrapper input {
+  border: 1px solid lightgrey;
+  text-align: center;
+  padding: 8px;
+  border-radius: 5px;
+  width: 100%;
+}
 .social {
   width: 20%;
   height: 80px;
-  border: 1px solid blue;
   display: flex;
   justify-content: space-evenly;
+  cursor: pointer;
+  align-items: center;
 }
 .fa-instagram {
   border-right: 1px solid black;
@@ -28,5 +36,4 @@
   justify-content: flex-start;
   margin: 0;
   width: 20%;
-  padding-left: 10px;
 }

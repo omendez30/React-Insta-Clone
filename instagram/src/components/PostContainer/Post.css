@@ -1,6 +1,6 @@
 .post-container-wrapper {
   height: 500px;
-  max-width: 800px;
+  max-width: 700px;
   width: 100%;
   margin: 0 auto;
 }
@@ -9,12 +9,28 @@
   margin: 5px 0;
   box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
 }
+.post-header-wrapper {
+  display: flex;
+}
+.post-user-img img {
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 10px;
+  padding: 10px;
+}
+.post-username {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-weight: bold;
+}
 .post-image-wrapper {
   height: 100%;
   width: 100%;
 }
 
-.post-image {
+.post-img {
   width: 100%;
 }
 
