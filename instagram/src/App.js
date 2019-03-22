@@ -1,4 +1,6 @@
 import React from "react";
+import "./App.css";
+
 import SearchBar from "./components/SearchBar/SearchBar";
 import PostContainer from "./components/PostContainer/PostContainer.js";
 import dummyData from "./dummy-data.js";
@@ -9,7 +11,7 @@ import {
   faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 import PostPage from "./components/PostContainer/PostPage";
-import "./App.css";
+
 import Authenticate from "./components/Authenticaiton/Authenticate";
 library.add(faCompass, faHeart, faUserCircle);
 
@@ -25,10 +27,6 @@ class App extends React.Component {
     this.setState({ posts: dummyData });
   }
 
-  // searchName = event => {
-  //   name = event.target.value;
-  //   this.setState({})
-  // }
   searchPostHandler = event => {
     event.preventDefault();
     const posts = this.state.posts.filter(p => {

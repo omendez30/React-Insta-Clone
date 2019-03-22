@@ -29,7 +29,7 @@ class PostPage extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="app">
         <SearchBar
           searchTerm={this.state.searchTerm}
           searchPosts={this.searchPostHandler}
