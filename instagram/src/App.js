@@ -11,7 +11,7 @@ import {
   faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
 import PostPage from "./components/PostContainer/PostPage";
-
+import Login from "./components/Login/Login";
 import Authenticate from "./components/Authenticaiton/Authenticate";
 library.add(faCompass, faHeart, faUserCircle);
 
@@ -36,6 +36,8 @@ class App extends React.Component {
     });
     this.setState({ filteredPosts: posts });
   };
+
+  searchName = event => {};
   render() {
     console.log(dummyData);
     return (
@@ -51,4 +53,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// export default App;
+export default Authenticate(App);

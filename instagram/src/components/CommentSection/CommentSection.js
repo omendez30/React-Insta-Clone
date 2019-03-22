@@ -9,7 +9,8 @@ class CommentSection extends React.Component {
     this.state = {
       comments: props.comments,
       comment: "",
-      count: count
+      count: count,
+      thisUserClicked: false
     };
   }
   componentDidMount() {
@@ -19,8 +20,6 @@ class CommentSection extends React.Component {
       this.setState({
         comment: JSON.parse(localStorage.getItem(this.props.postId))
       }); //might need to tweek
-    } else {
-      this.setComments();
     }
   }
 
@@ -49,6 +48,7 @@ class CommentSection extends React.Component {
       this.setComments();
     }, 500);
   };
+
   commentHandler = event => {
     this.setState({ comment: event.target.value });
   };
@@ -56,10 +56,10 @@ class CommentSection extends React.Component {
   addLike = event => {
     if (!this.state.thisUserClicked) {
       count += 1;
-      this.setState(prevState => ({ count: count, thisUserClicked: true }));
+      this.setState({ count: count, thisUserClicked: true });
     } else {
       count -= 1;
-      this.setState(prevState => ({ count: count, thisUserClicked: false }));
+      this.setState({ count: count, thisUserClicked: false });
     }
   };
   compoenentWillReceiveProps(nextProps) {
