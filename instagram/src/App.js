@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import SearchBar from "./components/SearchBar/SearchBar";
 import PostContainer from "./components/PostContainer/PostContainer.js";
 import dummyData from "./dummy-data.js";
@@ -8,41 +8,46 @@ import {
   faHeart,
   faUserCircle
 } from "@fortawesome/free-solid-svg-icons";
+import PostPage from "./components/PostContainer/PostPage";
 import "./App.css";
+import Authenticate from "./components/Authenticaiton/Authenticate";
 library.add(faCompass, faHeart, faUserCircle);
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = {
       posts: [],
-      filteredPost: []
+      filteredPosts: []
     };
   }
   componentDidMount() {
-    console.log("CDM");
     this.setState({ posts: dummyData });
   }
 
-  searchPostsHandler = event => {
-    const posts = this.state.posts.filter(post => {
-      if (post.username.includes(event.target.value)) {
-        return post;
+  // searchName = event => {
+  //   name = event.target.value;
+  //   this.setState({})
+  // }
+  searchPostHandler = event => {
+    event.preventDefault();
+    const posts = this.state.posts.filter(p => {
+      if (p.username.includes(event.target.value)) {
+        return p;
       }
     });
     this.setState({ filteredPosts: posts });
   };
   render() {
+    console.log(dummyData);
     return (
       <div className="app">
-        <SearchBar searchPosts={this.searchPostsHandler} />
-        <PostContainer
-          posts={
-            this.state.filteredPost.length > 0
-              ? this.state.filteredPosts
-              : this.state.posts
-          }
-        />
+        {/* <SearchBar
+          searchPosts={this.searchPostHandler}
+          searchTerm={this.state.searchTerm}
+        /> */}
+        <PostPage />
+        {/* <PostContainer posts={this.state.posts} /> */}
       </div>
     );
   }
