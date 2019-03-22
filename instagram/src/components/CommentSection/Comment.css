@@ -1,0 +1,24 @@
+.comment-text {
+  text-align: left;
+  padding: 2px;
+  margin-left: 4px;
+}
+
+.comment {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.user {
+  font-weight: 500;
+  font-size: 12px;
+}
+form input {
+  width: 96.8%;
+  padding: 10px;
+  border-top: 1px solid lightgrey;
+}
+.like {
+  background-color: #fff;
+  border: 1px solid lightgray;
+}
